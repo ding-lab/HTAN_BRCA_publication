@@ -12,7 +12,7 @@ options(future.globals.maxSize = 100 * 1024^3) # for 200 Gb RAM
 path_to_ATAC_merged_obj=''
 Piece_ID_subtype_annotation=''
 
-#Add assignment of normal duct cells for these cluters:
+#Add annotation of normal duct cells for these cluters:
 #13 - Lum mature
 #15 - Basal prog
 #30 - Lum prog
