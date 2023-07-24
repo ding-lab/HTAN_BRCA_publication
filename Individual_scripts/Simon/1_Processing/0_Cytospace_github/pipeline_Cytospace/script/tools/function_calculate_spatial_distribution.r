@@ -176,26 +176,3 @@ generatePointsInCircle <- function(n, radius, center_x=0, center_y=0, min_dist_r
   # Return the list of points
   return(points)
 }
-
-########################################################
-# TESTING SCRIPT 
-########################################################
-
-# ## check if generatePointsInCircle is working fine
-# ## test case : a uniform box 1:10 x 1:10
-# ## 1. generate 100 points in box, x and y should be between 1 and 10
-# box_array = expand.grid(1:3,1:3) %>% setNames(c('x','y'))
-# ## 2. Run generatePointsInCircle on all points in boxr = 1, n_points = 20
-# points_df = pmap(box_array, function(x,y, ...){
-#     generatePointsInCircle(center_x = x,center_y = y, radius = 0.1, n = 10)
-# }) %>% bind_rows %>% setNames(c('x','y'))
-
-# # Plot
-# pdf('/diskmnt/Datasets/Spatial_Transcriptomics/Analysis/PKD_local/Batch1-4/5_Cytospace/5_createCytospaceSeurat/out/STDim_TEST.pdf', w=12, h =6)
-# ggplot() + 
-#     geom_point(data = box_array, aes(x = x, y = y), color = 'black', size = 0.5) +
-#     geom_point(data = points_df, aes(x = x, y = y), color = 'red', size = 0.5) +
-#     theme_bw() +
-#     theme(legend.position = 'none')
-# dev.off()
-
