@@ -11,9 +11,9 @@ library(googlesheets4)
 # Add molecular subtype
 # load google sheet
 gs4_deauth()
-sheet_brca = read_sheet('https://docs.google.com/spreadsheets/d/10wyXuZaGAhKx0EWDI4ipCw8qgjTWS3uN9U_mScTS2DA/edit#gid=0')
+sheet_brca = read_sheet('URL_TO_DATA_SHEET')
 todaydata = format(Sys.Date(), "%Y%m%d")
-analysis_root = '/diskmnt/Datasets/Spatial_Transcriptomics/Analysis/BRCA_revision/1_RCTD/3_scRNA_by_subtype/7_scatterpie/Cytospace/'
+analysis_root = '/PATH/TO/PROJECT/3_scRNA_by_subtype/7_scatterpie/Cytospace/'
 
 # 1. Filer out unknown
 celltype_column = 'old_cell_type_specific'
@@ -23,7 +23,7 @@ subtype_meta = sheet_brca[, c('Case', 'FINAL_CALL')] %>%
 	distinct()
 
 # Run all the samples available 
-object_root = '/diskmnt/Datasets/Spatial_Transcriptomics/Analysis/BRCA_revision/1_RCTD/3_scRNA_by_subtype/4_runCytospace/Cytospace/'
+object_root = '/PATH/TO/PROJECT/3_scRNA_by_subtype/4_runCytospace/Cytospace/'
 
 
 celltype_interests = c('exhausted|Tumor|Macro|NK|DC|B|Mast')
@@ -158,8 +158,8 @@ MakeSampleLevelPieFromMatrix = function(mtx, percent_cutoff = 0.01){
 ############################################################################################################
 # Load data ---------------------------------------------------------------
 # Load and Plot data ---------------------------------------------------------------
-out_root = '/diskmnt/Datasets/Spatial_Transcriptomics/Analysis/BRCA_revision/1_RCTD/3_scRNA_by_subtype/7_scatterpie/Cytospace/out/'
-rctd_seruat_root = '/diskmnt/Datasets/Spatial_Transcriptomics/Analysis/BRCA_revision/1_RCTD/3_scRNA_by_subtype/3_runRCTD/4_Add_to_Seurat/out/'
+out_root = '/PATH/TO/PROJECT/3_scRNA_by_subtype/7_scatterpie/Cytospace/out/'
+rctd_seruat_root = '/PATH/TO/PROJECT/3_scRNA_by_subtype/3_runRCTD/4_Add_to_Seurat/out/'
 selected_cell_list = list(
     basal_enriched = c('CD8_T proliferating', 'CD8_T exhausted', 'CD4_T exhausted', 'CD4_T activated', 'cDC2','Treg','CD4_T'),
     cd8T = c('CD8_T proliferating', 'CD8_T exhausted', 'CD8_T preexhausted GZMK+', 'CD8_T'),
