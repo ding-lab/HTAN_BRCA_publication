@@ -39,8 +39,6 @@ for(sample_use in list.files(object_root)){
 
 
    # subset cell type to cell type of interests
-    #celltype_keep = str_subset(colnames(cell_type_composition), celltype_interests)
-    #cell_type_composition = cell_type_composition[, celltype_keep]
     cell_type_composition = cell_type_composition[, intersect(colnames(cell_type_composition), celltype_interests_vector)]
     message(str_glue('cell_type_composition: {str_c(colnames(cell_type_composition), collapse = ",")}'))
 

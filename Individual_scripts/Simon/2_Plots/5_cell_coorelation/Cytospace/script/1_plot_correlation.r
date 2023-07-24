@@ -28,8 +28,6 @@ for(sample_use in list.files(object_root)){
     cell_type_composition = st_use@misc$cytospace_result$cell_fractions %>% as.data.frame %>% column_to_rownames('SpotID') %>% as.matrix
     
     # subset cell type to cell type of interests
-    #celltype_keep = str_subset(colnames(cell_type_composition), celltype_interests)
-    #cell_type_composition = cell_type_composition[, celltype_keep]
     cell_keep = intersect(colnames(cell_type_composition), celltype_interests_vector)
     print(cell_keep)
     cell_type_composition = cell_type_composition[, cell_keep]
