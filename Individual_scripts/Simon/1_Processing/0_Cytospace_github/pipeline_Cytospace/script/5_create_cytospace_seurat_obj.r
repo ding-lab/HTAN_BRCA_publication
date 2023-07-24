@@ -80,7 +80,6 @@ message("Running SCT on the cytospace seurat object")
 cytoseurat_obj = SCTransform(cytoseurat_obj, assay = 'RNA', verbose = FALSE)
 
 ## Save cytospace seurat object
-#qs::qsave(cytoseurat_obj, str_glue("{out_path}/Cytospace_seurat_{ST_sample_name}.qs"))
 # Switch to not use the sample name for now
 qs::qsave(cytoseurat_obj, str_glue("{out_path}/Cytospace_seurat_object.qs"))
 

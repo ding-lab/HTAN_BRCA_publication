@@ -18,7 +18,6 @@ sample_name = opt$sample_name
 script_root = opt$script_root
 
 # Generate required file from seurat objects
-# conda activate seurat4.3
 library(tidyverse)
 library(googlesheets4)
 library(qs)

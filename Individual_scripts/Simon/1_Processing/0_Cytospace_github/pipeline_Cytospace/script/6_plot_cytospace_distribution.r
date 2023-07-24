@@ -1,3 +1,4 @@
+# conda activate seurat4.3              
 library(optparse)
 ################################################################################
 option_list = list(
@@ -27,8 +28,7 @@ label_st = opt$label_st
 
 
 # Expression : snRNA matrix
-# Cells : assigned_locations.csv, OriginalCID
-# conda activate seurat4.3                                                        
+# Cells : assigned_locations.csv, OriginalCID  
 library(tidyverse)
 library(googlesheets4)
 library(qs)
@@ -96,9 +96,6 @@ pdf(str_glue('{out_path}/1_STDim_{cell_type_column_name}.pdf'), w=15, h =7)
         scale_fill_manual(values = ident_color_use) + 
         # Make legend dot larger
         guides(fill = guide_legend(override.aes = list(size=6))) 
-    # psn = DimPlot(cytoobj, group.by = cell_type_column_name, label = TRUE, label.size = 3) + 
-    #     labs(title = str_glue("UMAP")) 
-    #     #scale_color_manual(values = ident_color_use)
 
     # Also just histology
     p_hist = SpatialCytoPlot(cytoobj, group.by = cell_type_column_name, label = F, label.size = 3, pt.size.factor = 0, stroke = stroke, image.alpha = 1,

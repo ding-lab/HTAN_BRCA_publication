@@ -18,11 +18,6 @@ SpatialCytoPlot = function(cyto_object,
   coor_df = cyto_object@misc$cytospace_coordinate[[match.arg(method)]]
 
   # 2. Replace coordinate in the image
-  # img_obj = cyto_object@images[[1]]
-  # img_name = Images(cyto_object)[[1]]
-  # img_obj@coordinates <- coor_df # replace the coordinate
-  # DefaultAssay(img_obj) <- 'RNA'
-  # cyto_object[[img_name]] <- img_obj
   cyto_object@images[[1]]@coordinates <- coor_df # replace the coordinate
   
   # 3. Reoder object by feature value
