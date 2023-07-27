@@ -42,14 +42,15 @@ The subtyping algorithm is called by running subtype_assignment.R after first ed
 
 Parameters to edit before running are:
 
-    inputDir:   The directory where your input matrix of gene expression values is located
-    short:      A short name which will be appended to all output files. Including a date here is wise.
-    datatype:   Data type. Must be "sn" or "bulk"
+    working dir:    This should point to the "PAM50_code" directory
+    inputDir:       The directory where your input matrix of gene expression values is located
+    short:          A short name which will be appended to all output files. Including a date here is wise.
+    datatype:       Data type. Must be "sn" or "bulk"
 
 Note that to run this code, you will need the ctc and heatmap.plus R packages installed.
 
 #-------------------------------------#
-Output and interpretation
+#      Output and interpretation      #
 #-------------------------------------#
 Output
 
